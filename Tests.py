@@ -13,7 +13,8 @@ while x != "exit":
             for j in range(size):
                 row.append(float(matrix_elements[i * size + j]))
             matrix.append(row)
-    for row in matrix:
-        print(row)
-    x = input("Type 'continue' to proceed or 'exit' to quit: ")    
+        for row in matrix:
+            print(row)
+    matrix = []
+    x = input("Type 'continue' to proceed or 'exit' to quit: ") 
 print("Exited the loop.")
