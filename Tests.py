@@ -17,4 +17,3 @@ while x != "exit":
         print(row)
     x = input("Type 'continue' to proceed or 'exit' to quit: ")    
 print("Exited the loop.")
-    
