@@ -23,6 +23,23 @@ else:
         det_coef = coef_matrix[0][0] * coef_matrix[1][1] - coef_matrix[0][1] * coef_matrix[1][0]
         delta_1 = res_matrix[0][0] * coef_matrix[1][1] - res_matrix[1][0] * coef_matrix[1][0]
         delta_2 = coef_matrix[0][0] * res_matrix[1][0] - coef_matrix[1][0] * res_matrix[0][0]
-        print("First root is: " + str(delta_1 / det_coef))
-        print("Second root is: " + str(delta_2 / det_coef))
-    #TODO 3x3 case
+        print("First root is: " + str(round(delta_1 / det_coef, 2)))
+        print("Second root is: " + str(round(delta_2 / det_coef, 2)))
+    elif size == 3:
+        det_coef = (coef_matrix[0][0] * (coef_matrix[1][1] * coef_matrix[2][2] - coef_matrix[1][2] * coef_matrix[2][1]) -
+                     coef_matrix[0][1] * (coef_matrix[1][0] * coef_matrix[2][2] - coef_matrix[1][2] * coef_matrix[2][0]) +
+                     coef_matrix[0][2] * (coef_matrix[1][0] * coef_matrix[2][1] - coef_matrix[1][1] * coef_matrix[2][0]))
+        delta_1 = (res_matrix[0][0] * (coef_matrix[1][1] * coef_matrix[2][2] - coef_matrix[1][2] * coef_matrix[2][1]) -
+                   coef_matrix[0][1] * (res_matrix[1][0] * coef_matrix[2][2] - coef_matrix[1][2] * res_matrix[2][0]) +
+                   coef_matrix[0][2] * (res_matrix[1][0] * coef_matrix[2][1] - coef_matrix[1][1] * res_matrix[2][0]))
+        delta_2 = (coef_matrix[0][0] * (res_matrix[1][0] * coef_matrix[2][2] - coef_matrix[1][2] * res_matrix[2][0]) -
+                   res_matrix[0][0] * (coef_matrix[1][0] * coef_matrix[2][2] - coef_matrix[1][2] * coef_matrix[2][0]) +
+                   coef_matrix[0][2] * (coef_matrix[1][0] * res_matrix[2][0] - res_matrix[1][0] * coef_matrix[2][0]))
+        delta_3 = (coef_matrix[0][0] * (coef_matrix[1][1] * res_matrix[2][0] - res_matrix[1][0] * coef_matrix[2][1]) -
+                   coef_matrix[0][1] * (coef_matrix[1][0] * res_matrix[2][0] - res_matrix[1][0] * coef_matrix[2][0]) +
+                   res_matrix[0][0] * (coef_matrix[1][0] * coef_matrix[2][1] - coef_matrix[1][1] * coef_matrix[2][0]))
+        print("First root is: " + str(round(delta_1 / det_coef, 2)))
+        print("Second root is: " + str(round(delta_2 / det_coef, 2)))
+        print("Third root is: " + str(round(delta_3 / det_coef, 2)))
+    else:
+        print("Uncalcualable by the current method")
