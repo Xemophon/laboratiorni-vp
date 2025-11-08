@@ -6,6 +6,7 @@ from time import sleep
 # Mapping exe files
 i = 0
 SKIP_DIRS = {"bepinex", "monobleedingedge", "repo_data", "_commonredist", "platform-tools", "engine", "fsd", "pipelinecaches"}
+    #change path to your cracked games directory
 games = pathlib.Path("D:/PGames")
 g_list = list(
     path.name
@@ -30,4 +31,5 @@ chosen_game = g_list[choice - 1]
 sleep(20)
 print(f"Launching {chosen_game}...")
 subprocess.Popen([str(path) for path in games.rglob(chosen_game) if path.name == chosen_game][0])
+
 exit
