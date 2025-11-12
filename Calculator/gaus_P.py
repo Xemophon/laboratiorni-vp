@@ -7,7 +7,10 @@ def gaussian_probability():
         res_res = res - fr_res
         z = round(res_res / st_dev, 2)
         chnc = 0.5000 + 0.0040 * z * 100
-        print(f"The chance to occur up to the desired one is {round(chnc * 100,2)} %")
+        if chnc >= 1:
+            print("Occurance is 100%")
+        else:
+            print(f"The chance to occur up to the desired one is {round(chnc * 100,2)} %")
     if cho == 2:
         res = input("Enter number between 0.00 and 3.00")
         if res <= 0 or res >= 3.00:
@@ -25,6 +28,9 @@ def gaussian_probability():
         res_res = res - fr_res
         z = round(res_res / st_dev, 2)
         chnc = 0.5000 + 0.0040 * z * 100
-        print(f"The chance to occur up to the desired one is {round(chnc * 100,2)} %")
+        if chnc >= 1:
+            print("Occurance is 100%")
+        else:
+            print(f"The chance to occur up to the desired one is {round(chnc * 100,2)} %")
     else:
         print("Exited")
