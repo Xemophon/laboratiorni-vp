@@ -1,26 +1,26 @@
-lst_10 = input("Enter 10 numebrs: ").split()
-lst_10_odd = []
+lst_10 = list(map(int, input("Enter 10 numebrs: ").split()))
 
 #a podtochka
+count = 0
 for i in range(len(lst_10)):
     if int(lst_10[i]) % 2 == 0:
         pass
     elif int(lst_10[i]) % 2 == 1:
-        lst_10_odd.append(lst_10[i])
-print(f"The odd numbers are: {lst_10_odd}")
+        count += 1
+print(f"The odd numbers are: {count}")
 
 #b podtochka
 sum = 0
 for j in range(len(lst_10)):
-    sum += int(lst_10[j])
-print(f"Average is: {sum/len(lst_10)}")
+    sum += abs((lst_10[j]))
+print(f"Average is: {round(sum/len(lst_10), 2)}")
 
 #v i g podtochka
 lst_5 = []
 lst_10.sort(reverse=True)
 for k in range(len(lst_10)):
     if int(lst_10[k]) % 2 == 0:
-        lst_5.append(lst_10[k])
+        lst_5.append(abs(lst_10[k]))
         if len(lst_5) == 5:
             break
         else:
